@@ -36,7 +36,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected boolean isParallax() {
-        return false;
+        return true;
     }
 
     @Override

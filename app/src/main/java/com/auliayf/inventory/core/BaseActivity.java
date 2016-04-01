@@ -19,7 +19,7 @@ import com.auliayf.inventory.R;
  * Created by uoy on 31/03/16.
  */
 public abstract class BaseActivity extends AppCompatActivity {
-    private View mBaseView = null;
+    private RelativeLayout mBaseView = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,7 +50,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(isHasUpButton());
 
-        mBaseView = getLayoutInflater().inflate(getLayoutResource(), null);
+        mBaseView = (RelativeLayout) findViewById(R.id.baseInclude);
+        View includedView = getLayoutInflater().inflate(getLayoutResource(), null);
+        mBaseView.removeAllViews();
+
+        mBaseView.addView(includedView);
     }
 
     private void applyPalette(CollapsingToolbarLayout collapsingToolbarLayout, Palette palette) {
