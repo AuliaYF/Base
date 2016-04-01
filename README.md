@@ -2,6 +2,6 @@
 Base-App, commonly used for new android app.
 
 ### Screenshots
-![Normal Mode](./screens/normal.png =320x533)
+<img src="./screens/normal.png" width="320px" height="533px">
 
-![Parallax Mode](./screens/parallax.png =320x533)
+<img src="./screens/parallax.png" width="320px" height="533px">
