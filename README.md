@@ -1,2 +1,2 @@
-# Inventory
-An 'Inventory' Android-Based App Prototype
+# Base
+Base-App, commonly used for new android app.
