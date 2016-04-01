@@ -25,7 +25,11 @@ public abstract class BaseActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(isParallax() ? R.layout.activity_base_parallax : R.layout.activity_base);
+        initView(isParallax(), isHasUpButton(), isHasFab());
+    }
+
+    protected void initView(boolean isParalax, boolean isHasUpButton, boolean isHasFab) {
+        setContentView(isParalax ? R.layout.activity_base_parallax : R.layout.activity_base);
 
         if (isParallax()) {
             RelativeLayout baseHeader = (RelativeLayout) findViewById(R.id.header);
@@ -48,7 +52,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(isHasUpButton());
+        getSupportActionBar().setDisplayHomeAsUpEnabled(isHasUpButton);
 
         mBaseView = (RelativeLayout) findViewById(R.id.baseInclude);
         View includedView = getLayoutInflater().inflate(getLayoutResource(), null);
@@ -57,7 +61,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         mBaseView.addView(includedView);
 
         FloatingActionButton fabButton = (FloatingActionButton) findViewById(R.id.fab);
-        fabButton.setVisibility(isHasFab() ? View.VISIBLE : View.GONE);
+        fabButton.setVisibility(isHasFab ? View.VISIBLE : View.GONE);
         fabButton.setOnClickListener(getFabClickListener());
     }
 

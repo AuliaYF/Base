@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Base</string>
     <string name="action_settings">Settings</string>
+
+    <string name="btn_normal">Switch to normal mode</string>
+    <string name="btn_parallax">Switch to parallax mode</string>
 </resources>
