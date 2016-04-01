@@ -1,15 +1,9 @@
-package com.auliayf.inventory;
+package com.auliayf.base;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 
-import com.auliayf.inventory.core.BaseActivity;
+import com.auliayf.base.core.BaseActivity;
 
 public class MainActivity extends BaseActivity {
 
@@ -30,13 +24,23 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
+    protected View.OnClickListener getFabClickListener() {
+        return null;
+    }
+
+    @Override
     protected boolean isHasUpButton() {
         return false;
     }
 
     @Override
     protected boolean isParallax() {
-        return true;
+        return false;
+    }
+
+    @Override
+    protected boolean isHasFab() {
+        return false;
     }
 
     @Override

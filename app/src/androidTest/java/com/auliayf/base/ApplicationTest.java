@@ -1,4 +1,4 @@
-package com.auliayf.inventory;
+package com.auliayf.base;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

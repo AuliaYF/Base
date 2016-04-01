@@ -1,10 +1,10 @@
-package com.auliayf.inventory.core;
+package com.auliayf.base.core;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.auliayf.inventory.R;
+import com.auliayf.base.R;
 
 /**
  * Created by uoy on 31/03/16.
@@ -55,6 +55,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         mBaseView.removeAllViews();
 
         mBaseView.addView(includedView);
+
+        FloatingActionButton fabButton = (FloatingActionButton) findViewById(R.id.fab);
+        fabButton.setVisibility(isHasFab() ? View.VISIBLE : View.GONE);
+        fabButton.setOnClickListener(getFabClickListener());
     }
 
     private void applyPalette(CollapsingToolbarLayout collapsingToolbarLayout, Palette palette) {
@@ -73,9 +77,14 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected abstract int getHeaderResource();
 
+    protected abstract View.OnClickListener getFabClickListener();
+
     protected abstract boolean isHasUpButton();
 
     protected abstract boolean isParallax();
+
+    protected abstract boolean isHasFab();
+
 
     protected abstract void updateState(Object... args);
 }

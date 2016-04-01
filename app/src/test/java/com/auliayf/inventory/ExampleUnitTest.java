@@ -1,4 +1,4 @@
-package com.auliayf.inventory;
+package com.auliayf.base;
 
 import org.junit.Test;
 
